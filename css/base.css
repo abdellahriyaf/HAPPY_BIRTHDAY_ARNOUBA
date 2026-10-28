@@ -1,0 +1,25 @@
+:root{--bg:#2a1c12;--paper:#E6D9B6;--ink:#4A2E1E;--pink:#D49A98;--rose:#B5666C;--gold:#B8923F;box-sizing:border-box}
+*,*::before,*::after{box-sizing:inherit}
+html,body{height:100%;margin:0}
+body{background:radial-gradient(120% 90% at 50% 0%,#3b271a,var(--bg));color:var(--paper);font:17px/1.5 Georgia,'Times New Roman',serif;padding:env(safe-area-inset-top,0px) 0 env(safe-area-inset-bottom,0px);overflow:hidden}
+#app{height:100%;display:grid;place-items:center;padding:20px}
+.sec{width:min(92vw,520px);text-align:center;animation:in .6s ease both}
+.sec.leave{animation:out .4s ease both}
+@keyframes in{from{opacity:0;transform:translateY(14px)}}
+@keyframes out{to{opacity:0;transform:translateY(-10px)}}
+h1{font-weight:normal;font-size:clamp(1.6rem,6vw,2.2rem);margin:0 0 6px}
+.sub{opacity:.75;font-style:italic;margin:0 0 22px}
+.btn{font:inherit;color:var(--ink);background:var(--paper);border:2px solid var(--ink);border-radius:999px;padding:10px 26px;cursor:pointer;transition:transform .15s,opacity .2s}
+.btn:hover:not(:disabled){transform:translateY(-2px) rotate(-1deg)}
+.btn:disabled{opacity:.35;cursor:default}
+.btn:focus-visible,.card:focus-visible,.mute:focus-visible{outline:3px solid var(--pink);outline-offset:3px}
+.cards{display:grid;gap:12px;margin:0 0 22px}
+.card{font:inherit;text-align:left;color:var(--ink);background:var(--paper);border:2px solid var(--ink);border-radius:10px;padding:14px 16px;cursor:pointer;display:flex;justify-content:space-between;gap:12px;align-items:center;transition:transform .2s,box-shadow .2s,background .2s}
+.card:hover{transform:translateY(-2px) rotate(-.6deg)}
+.card.on{background:var(--pink);box-shadow:0 0 0 3px var(--gold)}
+.card small{opacity:.7;display:block}
+.note{min-height:1.4em;font-size:.9rem;color:var(--pink);margin:0 0 10px}
+.mute{position:fixed;right:14px;top:calc(env(safe-area-inset-top,0px) + 14px);width:42px;height:42px;border-radius:50%;border:2px solid var(--ink);background:var(--paper);color:var(--ink);font-size:1.1rem;cursor:pointer}
+.mute[hidden]{display:none}
+.mute.off{opacity:.5;text-decoration:line-through}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important}}
