@@ -1,9 +1,14 @@
 # Anniversary page
 
-Sections play in this order: music picker, cabinet, letter, poem, game.
-Each section is its own file in `sections/` and registers itself in `window.Sections`.
-`js/main.js` holds the order and loads them one by one; a missing file shows a "coming soon" card.
+Order: music picker (with the gramophone), cabinet, letter, poem, game.
+Each section is a file in `sections/` that registers itself in `window.Sections`; `js/main.js` loads them in order
+and shows a "coming soon" card for any that do not exist yet.
 
-## Adding music
-1. Upload instrumental `.mp3` files into the `music/` folder (GitHub: Add file > Upload files).
-2. Edit `js/tracks.js` so each entry's `file` matches an uploaded file name.
+The gramophone (`js/gramophone.js`) is one element: centred in the intro, then parked bottom-left for the rest of the page.
+Tapping it opens the control panel (`js/panel.js`): volume, queue reset, and the four atmosphere sliders.
+The small speaker button next to it mutes everything.
+
+## Music
+1. Put `music1.mp3`, `music2.mp3`, `music3.mp3` (instrumental) and `music1.jpg`, `music2.jpg`, `music3.jpg` in `music/`.
+2. Names and titles live in `js/tracks.js`.
+3. Add `?preview` to the page URL to click through without audio files.

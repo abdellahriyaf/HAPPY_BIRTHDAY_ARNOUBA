@@ -1,6 +1,6 @@
-/* Instrumental only. Upload files to /music and match the names here. */
+/* The three discs. Put the audio and the thumbnails in /music and match the names here. */
 window.TRACKS=[
- {id:'t1',title:'Track one',mood:'soft and slow',file:'music/track1.mp3'},
- {id:'t2',title:'Track two',mood:'warm and dreamy',file:'music/track2.mp3'},
- {id:'t3',title:'Track three',mood:'light and playful',file:'music/track3.mp3'}
+ {title:'Music 1',file:'music/music1.mp3',thumb:'music/music1.jpg',color:'#E3A99A'},
+ {title:'Music 2',file:'music/music2.mp3',thumb:'music/music2.jpg',color:'#7FA9AE'},
+ {title:'Music 3',file:'music/music3.mp3',thumb:'music/music3.jpg',color:'#D9A93F'}
 ];
