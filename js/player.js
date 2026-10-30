@@ -59,5 +59,6 @@ window.Player={
  setVol:function(v){st.vol=v;if(ctx&&st.on)master.gain.setTargetAtTime(v,ctx.currentTime,.05);emit()},
  setAmb:function(k,v){init();st.amb[k]=v;applyAmb()},
  current:function(){return T[st.queue[st.idx]]||null},
+ fx:function(f){init();if(ctx)f(ctx,master)},
  on:function(f){subs.push(f);return function(){var i=subs.indexOf(f);if(i>-1)subs.splice(i,1)}}};
 })();

@@ -1,6 +1,6 @@
 (function(){
 'use strict';
-var ORDER=['music','cabinet','letter','poem','game'];
+var ORDER=['music','cabinet','game'];
 var app=document.getElementById('app');
 var i=-1,busy=false;
 window.Sections=window.Sections||{};
