@@ -61,7 +61,7 @@ function place(pre){
 function notes(on){
  clearInterval(notesT);if(!on)return;
  notesT=setInterval(function(){
-  var n=document.createElement('span');n.className='nt';n.textContent=['♪','♫','♥'][Math.random()*3|0];
+  var n=document.createElement('span');n.className='nt';n.innerHTML=window.Icons.get(['note','notes','heart'][Math.random()*3|0],56);
   n.style.cssText='left:'+(290+Math.random()*80)+'px;top:'+(44+Math.random()*110)+'px;--dx:'+(Math.random()*160-30)+'px';
   box.appendChild(n);setTimeout(function(){n.remove()},2700)},650)}
 window.Gramo={

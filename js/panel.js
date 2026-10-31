@@ -20,7 +20,7 @@ window.UI={
 var P,opener=null,mute;
 function build(){
  P=document.createElement('aside');P.id='panel';P.className='panel';P.setAttribute('inert','');P.setAttribute('role','dialog');P.setAttribute('aria-modal','true');P.setAttribute('aria-label','Music and sounds');
- P.innerHTML='<div class="pbox"><button class="pclose" type="button" aria-label="Close">&times;</button>'
+ P.innerHTML='<div class="pbox"><button class="pclose" type="button" aria-label="Close">'+window.Icons.get('close',22)+'</button>'
  +'<h2>Music &amp; sounds</h2>'
  +'<section class="psec"><div class="prow"><label for="pv">Volume</label><input type="range" id="pv" min="0" max="1" step="0.01"><button class="pill" type="button" id="psound"></button></div></section>'
  +'<section class="psec"><h3>Your queue</h3><p class="np" id="pnp"></p><div class="pdiscs"></div><p class="hint">Tap the discs in the order you want to hear them.</p><p class="note" id="pnote" role="status"></p><button class="pill" type="button" id="preset">Reset queue</button></section>'
@@ -59,7 +59,7 @@ function close(){
 window.Panel={
  init:function(){
   mute=document.createElement('button');mute.id='mute';mute.type='button';mute.setAttribute('aria-label','Mute everything');
-  mute.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5v5h3.5l5 4v-13l-5 4z" fill="currentColor"/><path class="w" d="M16 9.2a4 4 0 0 1 0 5.6M18.8 6.6a8 8 0 0 1 0 10.8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path class="x" d="M16 9l5 6M21 9l-5 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>';
+  mute.innerHTML=window.Icons.get('speaker',28)+window.Icons.get('speakerOff',28);
   mute.onclick=function(){window.Player.toggleSound()};
   document.body.appendChild(mute);
   build();
